@@ -23,10 +23,10 @@ gem 'font-awesome-sass', '4.2.0'
 gem 'devise', '~> 3.4.1'
 
 # Use stripe for handling payments
-gem 'stripe', '1.16.1'
+gem 'stripe', '~> 1.16.1'
 
 # Use figaro to hide secret keys
-gem 'figaro', '1.0.0'
+gem 'figaro', '~> 1.0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
