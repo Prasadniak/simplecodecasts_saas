@@ -22,6 +22,12 @@ gem 'font-awesome-sass', '4.2.0'
 # Use gem Devise
 gem 'devise', '~> 3.4.1'
 
+# Use stripe for handling payments
+gem 'stripe', '1.16.1'
+
+# Use figaro to hide secret keys
+gem 'figaro', '1.0.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
