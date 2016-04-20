@@ -17,7 +17,7 @@ class SpellcheckingsController < ApplicationController
             content = params[:spellchecking][:content]
             response = Unirest.post "https://textanalysis.p.mashape.com/textblob-spelling-correction",
               headers:{
-                "X-Mashape-Key" => "",
+                "X-Mashape-Key" => "0",
                 "Content-Type" => "application/x-www-form-urlencoded",
                 "Accept" => "application/json"
               },

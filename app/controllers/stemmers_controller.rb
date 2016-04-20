@@ -17,7 +17,7 @@ class StemmersController < ApplicationController
             content = params[:stemmer][:content]
            response = Unirest.post "https://textanalysis.p.mashape.com/nltk-porter-stemmer",
                   headers:{
-                    "X-Mashape-Key" => "",
+                    "X-Mashape-Key" => "0",
                     "Content-Type" => "application/x-www-form-urlencoded",
                     "Accept" => "application/json"
                   },

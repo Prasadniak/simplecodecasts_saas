@@ -17,7 +17,7 @@ class NounphrasesextractionsController < ApplicationController
             content = params[:nounphrasesextraction][:content]
             response = Unirest.post "https://textanalysis.p.mashape.com/textblob-noun-phrase-extraction",
               headers:{
-                "X-Mashape-Key" => "",
+                "X-Mashape-Key" => "0",
                 "Content-Type" => "application/x-www-form-urlencoded",
                 "Accept" => "application/json"
               },

@@ -21,7 +21,7 @@
       <%= link_to "Article Extraction", entityrecognizers_path(current_user), class:"list-group-item" %>
       <%= link_to "Pos Tagging", postaggers_path(current_user), class:"list-group-item" %>
       <%= link_to "Spell Checker", spellcheckings_path(current_user), class:"list-group-item" %>
-      <% if current_user.plan_id == 1 %>
+      <% if current_user.plan_id == 2 %>
       <%= link_to "Noun Phrase Extraction", nounphrasesextractions_path(current_user), class:"list-group-item" %>
       <%= link_to "Stemmer",stemmers_path(current_user), class:"list-group-item" %>
       <%= link_to "Language Detection", languagezzzs_path(current_user), class:"list-group-item" %>

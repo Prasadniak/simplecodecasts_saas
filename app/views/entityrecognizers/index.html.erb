@@ -32,7 +32,7 @@
    <h2 class="text-center">Select your type</h2>
     <div class="list-group">
       <%= link_to "Sentiment Analysis", sentiments_path(current_user), class:"list-group-item" %>
-      <%= link_to "Named Entity", entityrecognizers_path(current_user), class:"list-group-item" %>
+      <%= link_to "Article Extraction", entityrecognizers_path(current_user), class:"list-group-item" %>
       <%= link_to "Pos Tagging", postaggers_path(current_user), class:"list-group-item" %>
       <%= link_to "Spell Checker", spellcheckings_path(current_user), class:"list-group-item" %>
       <% if current_user.plan_id == 2 %>
@@ -45,6 +45,7 @@
       <%= link_to "Summarization", summarizationzs_path(current_user), class:"list-group-item" %>
       <%= link_to "Article Extraction", articlextracts_path(current_user), class:"list-group-item" %>
       <%= link_to "Hashtag Suggestion", hashtaggings_path(current_user), class:"list-group-item" %>
+      <%= link_to "Semantic Labeling", semantings_path(current_user), class:"list-group-item" %>
       <% end %>
     </div>
   </div>
