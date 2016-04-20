@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420111449) do
+ActiveRecord::Schema.define(version: 20160420122419) do
 
   create_table "articlextracts", force: true do |t|
     t.string   "content"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 20160420111449) do
   end
 
   create_table "entityrecognizers", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hashtaggings", force: true do |t|
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -102,6 +108,13 @@ ActiveRecord::Schema.define(version: 20160420111449) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "semantings", force: true do |t|
+    t.string   "content"
+    t.string   "content1"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sentiments", force: true do |t|

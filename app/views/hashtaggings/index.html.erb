@@ -1,10 +1,10 @@
 <div class="row">
-  <h1 class="text-center">Enter your Text for NLTK Stemming</h1>
+  <h1 class="text-center">Enter your Url for Hashtag Suggestions</h1>
   <div class="col-md-9 col-md-push-3">
-       <h2 class="text-center">Stemmer</h2>
-       <h3 class="text-center">Stemmers remove morphological affixes from words, leaving only the word stem</h3>
+       <h2 class="text-center">Hashtag Suggestions</h2>
+       <h4 class="text-center">Automatically suggests hashtags for optimal content sharing on Social Media</h4>
           <div class="well">
-            <%= form_for @stemmer do |f| %>
+            <%= form_for @hashtagging do |f| %>
               <div class="form-group">
                 <%= f.label :'Enter here' %>
                 <%= f.text_area :content, class: 'form-control' %>
@@ -13,13 +13,13 @@
             <% end %>
           </div>
           
-        <h1 class="text-center">Your Result</h1>
+        <h1 class="text-center">Your result</h1>
             <div class="well">
-              <% if @result %>
-                      <p><%= @result %></p>
+              <% if @hashreturn %>
+                 <p><b>Suggested Hashtags are : </b><%= @hashreturn %></p>
               <% end %>
             </div>
-    
+        
   </div>         
   
   <div class="col-md-3 col-md-pull-9">
@@ -31,7 +31,7 @@
       <%= link_to "Named Entity", entityrecognizers_path(current_user), class:"list-group-item" %>
       <%= link_to "Pos Tagging", postaggers_path(current_user), class:"list-group-item" %>
       <%= link_to "Spell Checker", spellcheckings_path(current_user), class:"list-group-item" %>
-      <% if current_user.plan_id == 1 %>
+      <% if current_user.plan_id == 2 %>
       <%= link_to "Noun Phrase Extraction", nounphrasesextractions_path(current_user), class:"list-group-item" %>
       <%= link_to "Stemmer",stemmers_path(current_user), class:"list-group-item" %>
       <%= link_to "Language Detection", languagezzzs_path(current_user), class:"list-group-item" %>

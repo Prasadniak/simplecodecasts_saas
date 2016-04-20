@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :profile
     resources :analysis
   end
-  resources :contacts, :sentiments, :entityrecognizers, :postaggers, :spellcheckings ,:nounphrasesextractions ,:stemmers ,:languagezzzs ,:lemmatizzers ,:classificationzs ,:conceptextracts ,:summarizationzs ,:articlextracts
+  resources :contacts, :sentiments, :entityrecognizers, :postaggers, :spellcheckings ,:nounphrasesextractions ,:stemmers ,:languagezzzs ,:lemmatizzers ,:classificationzs ,:semantings ,:conceptextracts ,:summarizationzs ,:articlextracts ,:hashtaggings
   root 'pages#home'
   get '/about' => 'pages#about'
   # The priority is based upon order of creation: first created -> highest priority.
