@@ -1,0 +1,48 @@
+<div class="row">
+  <h1 class="text-center">Enter your Text for Language Detection</h1>
+  <div class="col-md-9 col-md-push-3">
+       <h2 class="text-center">Language Detection</h2>
+       <h3 class="text-center">Support about 100 languages (ISO 639-1 codes)</h3>
+          <div class="well">
+            <%= form_for @languagezzz do |f| %>
+              <div class="form-group">
+                <%= f.label :'Enter here' %>
+                <%= f.text_area :content, class: 'form-control' %>
+              </div>
+              <%= f.submit 'Analyze', class: 'btn btn-default' %>
+            <% end %>
+          </div>
+          
+        <h1 class="text-center">Your Result</h1>
+            <div class="well">
+                <% if @result %>
+                  <% @result.each { |key,value| %>
+                          <b><%= key.capitalize %></b>:<p><%= value %></p>
+                  <% } %>
+                <% end %>
+            </div>
+    
+  </div>         
+  
+  <div class="col-md-3 col-md-pull-9">
+   <br/>
+   <br/>
+   <h2 class="text-center">Select your type</h2>
+    <div class="list-group">
+      <%= link_to "Sentiment Analysis", sentiments_path(current_user), class:"list-group-item" %>
+      <%= link_to "Named Entity", entityrecognizers_path(current_user), class:"list-group-item" %>
+      <%= link_to "Pos Tagging", postaggers_path(current_user), class:"list-group-item" %>
+      <%= link_to "Spell Checker", spellcheckings_path(current_user), class:"list-group-item" %>
+      <% if current_user.plan_id == 1 %>
+      <%= link_to "Noun Phrase Extraction", nounphrasesextractions_path(current_user), class:"list-group-item" %>
+      <%= link_to "Stemmer",stemmers_path(current_user), class:"list-group-item" %>
+      <%= link_to "Language Detection", languagezzzs_path(current_user), class:"list-group-item" %>
+      <%= link_to "Lemmatizer", lemmatizzers_path(current_user), class:"list-group-item" %>
+      <%= link_to "Sentimental analysis", "#", class:"list-group-item" %>
+      <%= link_to "Language Detection", "#", class:"list-group-item" %>
+      <%= link_to "Part-of-Speech", "#", class:"list-group-item" %>
+      <% end %>
+    </div>
+  </div>
+  
+</div>   

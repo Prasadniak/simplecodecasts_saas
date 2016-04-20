@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   belongs_to :plan
   has_one :profile
   attr_accessor :stripe_card_token
+  has_one :analysis
   
   def save_with_payment
     if valid?
