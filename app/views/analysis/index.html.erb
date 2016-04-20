@@ -24,10 +24,10 @@
       <% if current_user.plan_id == 2 %>
       <%= link_to "Noun Phrase Extraction", nounphrasesextractions_path(current_user), class:"list-group-item" %>
       <%= link_to "Stemmer",stemmers_path(current_user), class:"list-group-item" %>
-      <%= link_to "Classification by Taxanomy", "#", class:"list-group-item" %>
-      <%= link_to "Semantic Labeling", "#", class:"list-group-item" %>
-      <%= link_to "Related Phrases", "#", class:"list-group-item" %>
-      <%= link_to "Language Detection", "#", class:"list-group-item" %>
+      <%= link_to "Language Detection", languagezzzs_path(current_user), class:"list-group-item" %>
+      <%= link_to "Lemmatizer", lemmatizzers_path(current_user), class:"list-group-item" %>
+      <%= link_to "Classification", classificationzs_path(current_user), class:"list-group-item" %>
+      <%= link_to "Concept Extraction", conceptextracts_path(current_user), class:"list-group-item" %>
       <%= link_to "Part-of-Speech", "#", class:"list-group-item" %>
       <% end %>
     </div>

@@ -1,10 +1,10 @@
 <div class="row">
-  <h1 class="text-center">Enter your Text for Sentimental Analysis</h1>
+  <h1 class="text-center">Enter your Text for Concept Extraction</h1>
   <div class="col-md-9 col-md-push-3">
-       <h2 class="text-center">Sentimental</h2>
-       <h3 class="text-center">Identifies and extract subjective information in your text</h3>
+       <h2 class="text-center">Concept Extraction</h2>
+       <h4 class="text-center">Extracts named entities mentioned in a document, disambiguates and cross-links them to Wikipedia</h4>
           <div class="well">
-            <%= form_for @sentiment do |f| %>
+            <%= form_for @conceptextract do |f| %>
               <div class="form-group">
                 <%= f.label :'Enter here' %>
                 <%= f.text_area :content, class: 'form-control' %>
@@ -13,22 +13,15 @@
             <% end %>
           </div>
           
-        <h1 class="text-center">Your result</h1>
+        <h1 class="text-center">Your Result</h1>
             <div class="well">
-              <% if @type %>
-                 <p>Type : <%= @type %></p>
-              <% end %>
-              <% if @neg %>
-                <p>Nevativity : <%= @neg %></p>
-              <% end %>
-              <% if @neu %>
-                 <p>Neutrality : <%= @neu %></p>
-              <% end %>
-              <% if @pos %>
-                 <p>Positivity: <%= @pos %></p>
-              <% end %>
+                <% if @returnis %>
+                  <% @returnis.each do |num| %>
+                          <p><%= num %></p>
+                  <% end %>
+                <% end %>
             </div>
-        
+    
   </div>         
   
   <div class="col-md-3 col-md-pull-9">
@@ -40,14 +33,14 @@
       <%= link_to "Named Entity", entityrecognizers_path(current_user), class:"list-group-item" %>
       <%= link_to "Pos Tagging", postaggers_path(current_user), class:"list-group-item" %>
       <%= link_to "Spell Checker", spellcheckings_path(current_user), class:"list-group-item" %>
-      <% if current_user.plan_id == 2 %>
+      <% if current_user.plan_id == 1 %>
       <%= link_to "Noun Phrase Extraction", nounphrasesextractions_path(current_user), class:"list-group-item" %>
       <%= link_to "Stemmer",stemmers_path(current_user), class:"list-group-item" %>
       <%= link_to "Language Detection", languagezzzs_path(current_user), class:"list-group-item" %>
       <%= link_to "Lemmatizer", lemmatizzers_path(current_user), class:"list-group-item" %>
       <%= link_to "Classification", classificationzs_path(current_user), class:"list-group-item" %>
       <%= link_to "Concept Extraction", conceptextracts_path(current_user), class:"list-group-item" %>
-      <%= link_to "Part-of-Speech", "#", class:"list-group-item" %>
+      <%= link_to "Summarization", summarizationzs_path(current_user), class:"list-group-item" %>
       <% end %>
     </div>
   </div>

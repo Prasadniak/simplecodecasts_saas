@@ -1,10 +1,10 @@
 <div class="row">
-  <h1 class="text-center">Enter your Text for Sentimental Analysis</h1>
+  <h1 class="text-center">Enter your Url for Article Extraction</h1>
   <div class="col-md-9 col-md-push-3">
-       <h2 class="text-center">Sentimental</h2>
-       <h3 class="text-center">Identifies and extract subjective information in your text</h3>
+       <h2 class="text-center">Article Extraction</h2>
+       <h4 class="text-center">Extracts the main text of article and also extracts feeds and embedded media such as images & videos</h4>
           <div class="well">
-            <%= form_for @sentiment do |f| %>
+            <%= form_for @articlextract do |f| %>
               <div class="form-group">
                 <%= f.label :'Enter here' %>
                 <%= f.text_area :content, class: 'form-control' %>
@@ -15,17 +15,24 @@
           
         <h1 class="text-center">Your result</h1>
             <div class="well">
-              <% if @type %>
-                 <p>Type : <%= @type %></p>
+              <% if @author %>
+                 <p><b>Author : </b><%= @author %></p>
               <% end %>
-              <% if @neg %>
-                <p>Nevativity : <%= @neg %></p>
+              <% if @title %>
+                <p><b>Title : </b><%= @title %></p>
               <% end %>
-              <% if @neu %>
-                 <p>Neutrality : <%= @neu %></p>
+              <% if @publishDate %>
+                 <p><b>Pubish Date : </b><%= @publishDate %></p>
               <% end %>
-              <% if @pos %>
-                 <p>Positivity: <%= @pos %></p>
+              <% if @videos %>
+                 <p><b>Videos: </b><%= @videos.each { |a| %>
+                      <p><%= a %></p>
+                  <% } %>
+              <% end %>
+              <% if @feeds %>
+                 <p><b>Feeds: </b><%= @feeds.each { |a| %>
+                      <p><%= a %> </p>
+                  <% } %>
               <% end %>
             </div>
         
@@ -47,7 +54,8 @@
       <%= link_to "Lemmatizer", lemmatizzers_path(current_user), class:"list-group-item" %>
       <%= link_to "Classification", classificationzs_path(current_user), class:"list-group-item" %>
       <%= link_to "Concept Extraction", conceptextracts_path(current_user), class:"list-group-item" %>
-      <%= link_to "Part-of-Speech", "#", class:"list-group-item" %>
+      <%= link_to "Summarization", summarizationzs_path(current_user), class:"list-group-item" %>
+      <%= link_to "Article Extraction", articlextracts_path(current_user), class:"list-group-item" %>
       <% end %>
     </div>
   </div>

@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420075943) do
+ActiveRecord::Schema.define(version: 20160420111449) do
+
+  create_table "articlextracts", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "classificationzs", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "conceptextracts", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -99,6 +117,12 @@ ActiveRecord::Schema.define(version: 20160420075943) do
   end
 
   create_table "stemmers", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "summarizationzs", force: true do |t|
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"

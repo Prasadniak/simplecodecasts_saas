@@ -1,10 +1,10 @@
 <div class="row">
-  <h1 class="text-center">Enter your Text for Sentimental Analysis</h1>
+  <h1 class="text-center">Enter your Text,Url for Classification</h1>
   <div class="col-md-9 col-md-push-3">
-       <h2 class="text-center">Sentimental</h2>
-       <h3 class="text-center">Identifies and extract subjective information in your text</h3>
+       <h2 class="text-center">Classification</h2>
+       <h3 class="text-center">Text or Article or webpage to classify</h3>
           <div class="well">
-            <%= form_for @sentiment do |f| %>
+            <%= form_for @classificationz do |f| %>
               <div class="form-group">
                 <%= f.label :'Enter here' %>
                 <%= f.text_area :content, class: 'form-control' %>
@@ -13,22 +13,15 @@
             <% end %>
           </div>
           
-        <h1 class="text-center">Your result</h1>
+        <h1 class="text-center">Your Result</h1>
             <div class="well">
-              <% if @type %>
-                 <p>Type : <%= @type %></p>
-              <% end %>
-              <% if @neg %>
-                <p>Nevativity : <%= @neg %></p>
-              <% end %>
-              <% if @neu %>
-                 <p>Neutrality : <%= @neu %></p>
-              <% end %>
-              <% if @pos %>
-                 <p>Positivity: <%= @pos %></p>
-              <% end %>
+                <% if @labelr %>
+                  <p><b>Label : </b><%= @labelr%></p>
+                  <br/>
+                  <p><b>Text : </b><%= @textr%></p>
+                <% end %>
             </div>
-        
+    
   </div>         
   
   <div class="col-md-3 col-md-pull-9">
@@ -40,7 +33,7 @@
       <%= link_to "Named Entity", entityrecognizers_path(current_user), class:"list-group-item" %>
       <%= link_to "Pos Tagging", postaggers_path(current_user), class:"list-group-item" %>
       <%= link_to "Spell Checker", spellcheckings_path(current_user), class:"list-group-item" %>
-      <% if current_user.plan_id == 2 %>
+      <% if current_user.plan_id == 1 %>
       <%= link_to "Noun Phrase Extraction", nounphrasesextractions_path(current_user), class:"list-group-item" %>
       <%= link_to "Stemmer",stemmers_path(current_user), class:"list-group-item" %>
       <%= link_to "Language Detection", languagezzzs_path(current_user), class:"list-group-item" %>
