@@ -17,7 +17,7 @@ class EntityrecognizersController < ApplicationController
             content = params[:entityrecognizer][:content]
             response = Unirest.post "https://textanalysis.p.mashape.com/spacy-named-entity-recognition-ner",
               headers:{
-                "X-Mashape-Key" => "0",
+                "X-Mashape-Key" => "",
                 "Content-Type" => "application/x-www-form-urlencoded",
                 "Accept" => "application/json"
               },

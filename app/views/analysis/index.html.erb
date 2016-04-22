@@ -1,11 +1,19 @@
 <div class="row">
   <div class="col-md-9 col-md-push-3">
         
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        
+          
         <h1 class="text-center">Enter your Text, URL or article for analysis</h1>
-        <h2 class="text-center">And see your results below , these is it how it works</h2>
-          <div class="well">
+        <h2 class="text-center">And see your results  and it works very easy for you</h2>
             
-          </div>
+        
           
        
         
@@ -18,7 +26,7 @@
     <br>
     <div class="list-group">
       <%= link_to "Sentiment Analysis", sentiments_path(current_user), class:"list-group-item" %>
-      <%= link_to "Article Extraction", entityrecognizers_path(current_user), class:"list-group-item" %>
+      <%= link_to "Named Entity Recognition", entityrecognizers_path(current_user), class:"list-group-item" %>
       <%= link_to "Pos Tagging", postaggers_path(current_user), class:"list-group-item" %>
       <%= link_to "Spell Checker", spellcheckings_path(current_user), class:"list-group-item" %>
       <% if current_user.plan_id == 2 %>

@@ -17,7 +17,7 @@ class PostaggersController < ApplicationController
             content = params[:postagger][:content]
             response = Unirest.post "https://textanalysis.p.mashape.com/nltk-pos-tagging",
               headers:{
-                "X-Mashape-Key" => "0",
+                "X-Mashape-Key" => "",
                 "Content-Type" => "application/x-www-form-urlencoded",
                 "Accept" => "application/json"
               },

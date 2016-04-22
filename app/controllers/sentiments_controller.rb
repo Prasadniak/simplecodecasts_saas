@@ -17,7 +17,7 @@ class SentimentsController < ApplicationController
             content = params[:sentiment][:content]
             response = Unirest.post "https://japerk-text-processing.p.mashape.com/sentiment/",
               headers:{
-                "X-Mashape-Key" => "0",
+                "X-Mashape-Key" => "",
                 "Content-Type" => "application/x-www-form-urlencoded",
                 "Accept" => "application/json"
               },

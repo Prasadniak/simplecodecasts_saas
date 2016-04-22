@@ -16,7 +16,7 @@
         <h1 class="text-center">Your Result</h1>
             <div class="well">
               <% if @result %>
-                <b>Part-of-Speech : </b>
+                <b>Part-of-Speech: </b>
                       <% @result.split().each { |a| %>
                       <p><%= a %></p>
                   <% } %>
@@ -31,7 +31,7 @@
    <h2 class="text-center">Select your type</h2>
     <div class="list-group">
       <%= link_to "Sentiment Analysis", sentiments_path(current_user), class:"list-group-item" %>
-      <%= link_to "Article Extraction", entityrecognizers_path(current_user), class:"list-group-item" %>
+      <%= link_to "Named Entity Recognition", entityrecognizers_path(current_user), class:"list-group-item" %>
       <%= link_to "Pos Tagging", postaggers_path(current_user), class:"list-group-item" %>
       <%= link_to "Spell Checker", spellcheckings_path(current_user), class:"list-group-item" %>
       <% if current_user.plan_id == 2 %>
