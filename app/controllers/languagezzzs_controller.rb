@@ -17,7 +17,7 @@ class LanguagezzzsController < ApplicationController
             content = params[:languagezzz][:content]
             response = Unirest.post "https://textanalysis.p.mashape.com/langid-language-detection",
               headers:{
-                "X-Mashape-Key" => "0",
+                "X-Mashape-Key" => "Yg3OfGdmHFmshMsqaxsUodfaSly4p1NE5FAjsnxWPs41Y4p7hz",
                 "Content-Type" => "application/x-www-form-urlencoded",
                 "Accept" => "application/json"
               },

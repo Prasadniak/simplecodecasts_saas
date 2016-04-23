@@ -14,7 +14,7 @@ class ArticlextractsController < ApplicationController
         
         if @articlextract.save
             content = params[:articlextract][:content]
-            textapi = AylienTextApi::Client.new(app_id: "0", app_key: "0")
+            textapi = AylienTextApi::Client.new(app_id: "91602221", app_key: "67eddfa37211bb4bf28f3eb6f54651c7")
                 #url = "http://techcrunch.com/2015/04/06/john-oliver-just-changed-the-surveillance-reform-debate"
                 extract = textapi.extract(url: content, best_image: true)
                 

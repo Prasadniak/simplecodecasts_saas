@@ -16,7 +16,7 @@ class SemantingsController < ApplicationController
             content = params[:semanting][:content]
             content1 = params[:semanting][:content1]
               #textapi = AylienTextApi::Client.new(app_id: "0", app_key: "0")
-               textapi = AylienTextApi::Client.new(app_id: "0", app_key: "0")
+               textapi = AylienTextApi::Client.new(app_id: "91602221", app_key: "67eddfa37211bb4bf28f3eb6f54651c7")
                     classes = ["#{content1}",'']
                     
                     classifications = textapi.unsupervised_classify(url: content, class: classes)

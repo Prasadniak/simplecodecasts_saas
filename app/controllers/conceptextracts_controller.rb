@@ -15,7 +15,7 @@ class ConceptextractsController < ApplicationController
         
         if @conceptextract.save
             content = params[:conceptextract][:content]
-            textapi = AylienTextApi::Client.new(app_id: "0", app_key: "0")
+            textapi = AylienTextApi::Client.new(app_id: "91602221", app_key: "67eddfa37211bb4bf28f3eb6f54651c7")
                 response = textapi.concepts(text: content)
 
                     @outputis = Array.new

@@ -15,7 +15,7 @@ class HashtaggingsController < ApplicationController
         if @hashtagging.save
             content = params[:hashtagging][:content]
              # textapi = AylienTextApi::Client.new(app_id: "0", app_key: "0")
-              textapi = AylienTextApi::Client.new(app_id: "", app_key: "")
+              textapi = AylienTextApi::Client.new(app_id: "91602221", app_key: "67eddfa37211bb4bf28f3eb6f54651c7")
                 #url = "http://www.bbc.com/sport/0/football/25912393"
                 
                 response = textapi.hashtags(url: content)
